@@ -3,7 +3,7 @@ name: done
 description: Fin de session : extraction, logs, mise à jour des contextes
 ---
 
-# Fin de Session — Cortex
+# Fin de Session
 
 Clôture la session en extrayant les informations importantes et en mettant à jour le vault selon le flux de ruissellement.
 
@@ -13,15 +13,15 @@ Clôture la session en extrayant les informations importantes et en mettant à j
 
 Relis la conversation de cette session et extrais les **5 types d'information** :
 
-1. **Décisions** — Choix actés qui affectent les process ou l'organisation
+1. **Décisions** : choix actés qui affectent les process ou l'organisation
    - Ex : "On part sur NocoDB pour le CRM", "J'arrête ce projet"
-2. **Préférences** — Feedback utilisateur sur le comportement de l'agent
+2. **Préférences** : feedback utilisateur sur le comportement de l'agent
    - Ex : "Sois plus direct", "Ne me demande pas de valider chaque fois"
-3. **Faits** — Informations factuelles nouvelles
+3. **Faits** : informations factuelles nouvelles
    - Ex : "Nouveau client signé", "Le prix a changé", "Il a 30 personnes dans son équipe"
-4. **Contradictions** — Incohérences entre ce qui est documenté dans le vault et ce qui a été dit
+4. **Contradictions** : incohérences entre ce qui est documenté dans le vault et ce qui a été dit
    - Ex : La note de projet dit "deadline mars" mais on a parlé de "deadline juin"
-5. **Ressources** — Liens, références, outils, concepts mentionnés à documenter
+5. **Ressources** : liens, références, outils, concepts mentionnés à documenter
 
 Identifie aussi :
 - **Fichiers créés ou modifiés** pendant la session
@@ -34,7 +34,7 @@ Identifie aussi :
 ls -d "Second Cerveau/2 CASQUETTES/Sur ma vie/Life Phases/"*/ | sort -V | tail -1
 ```
 
-### Étape 3 : Log dans la daily note (NIVEAU 2 — OBLIGATOIRE)
+### Étape 3 : Log dans la daily note (NIVEAU 2, OBLIGATOIRE)
 
 Trouve ou crée la daily note du jour dans la phase active :
 - Chemin : `Second Cerveau/2 CASQUETTES/Sur ma vie/Life Phases/[Phase active]/[YYYY-MM-DD].md`
@@ -67,7 +67,7 @@ Ajoute à la fin de la note :
 - [ ] [TODO 2]
 ```
 
-### Étape 4 : Mise à jour des notes de contexte (NIVEAU 3 — OBLIGATOIRE, sans validation)
+### Étape 4 : Mise à jour des notes de contexte (NIVEAU 3, OBLIGATOIRE, sans validation)
 
 Pour chaque extraction de type Décision, Fait, ou Contradiction qui concerne un projet ou une casquette :
 
@@ -83,7 +83,7 @@ Si une **contradiction** est détectée : résous-la en faveur de ce qui a été
 
 Cherche dans les notes du vault (weekly notes, notes de projet) les todos qui ont été réalisés pendant cette session. Coche-les (`- [x]`).
 
-### Étape 6 : Mise à jour contexte personnel (NIVEAU 4 — avec validation)
+### Étape 6 : Mise à jour contexte personnel (NIVEAU 4, avec validation)
 
 Si des extractions de type Préférence ou des infos personnelles importantes ont émergé :
 
@@ -109,9 +109,9 @@ Si aucun changement n'est nécessaire, ne rien proposer.
 ```
 Session loggée !
 
-NIVEAU 2 — Daily note : [date] mise à jour
-NIVEAU 3 — Contextes mis à jour : [liste des fichiers modifiés]
-NIVEAU 4 — Contexte personnel : [mis à jour / pas de changement]
+NIVEAU 2 : Daily note : [date] mise à jour
+NIVEAU 3 : Contextes mis à jour : [liste des fichiers modifiés]
+NIVEAU 4 : Contexte personnel : [mis à jour / pas de changement]
 
 Extractions :
 - X décisions
@@ -125,7 +125,7 @@ Extractions :
 
 ## Notes
 
-- NIVEAU 3 (projets/casquettes) est appliqué directement — pas de validation
+- NIVEAU 3 (projets/casquettes) est appliqué directement, pas de validation
 - NIVEAU 4 (Moi.md, intention) nécessite validation
 - Être concis dans les logs (pas de blabla)
 - Utiliser des liens `[[wikilinks]]` quand pertinent

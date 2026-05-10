@@ -17,7 +17,7 @@ Tu guides l'utilisateur pour cartographier tous ses process de vie et réfléchi
 ### Étape 1 : Exploration des domaines de vie
 
 ```
-On va cartographier tous tes process — les tâches récurrentes ou déclenchées que tu fais régulièrement.
+On va cartographier tous tes process : les tâches récurrentes ou déclenchées que tu fais régulièrement.
 
 Pour chaque domaine, dis-moi les process que tu fais :
 
@@ -44,7 +44,7 @@ Pose des questions pour extraire :
 - Les tâches déclenchées par un événement
 - Les tâches ponctuelles mais fréquentes
 
-Demande à l'utilisateur de se projeter heure par heure dans une journée type pour comprenre ce qu'il faut, pour se voir faire des actions.
+Demande à l'utilisateur de se projeter heure par heure dans une journée type pour comprendre ce qu'il fait, pour se voir faire des actions.
 
 ### Étape 2 : Classification par temporalité
 
@@ -121,7 +121,7 @@ Tu veux commencer par quoi ?
 ## Règles
 
 - Pose des questions ouvertes pour faire émerger les process
-- Ne suppose pas — demande des clarifications
+- Ne suppose pas : demande des clarifications
 - Garde une vue d'ensemble avant d'entrer dans le détail
 - Propose des exemples pour débloquer l'utilisateur
 - Valide avant de créer des fichiers

@@ -1,6 +1,6 @@
 ---
 name: weekly-review
-description: Weekly review — bilan + priorisation par énergie
+description: Weekly review : bilan + priorisation par énergie
 ---
 
 # Weekly Review

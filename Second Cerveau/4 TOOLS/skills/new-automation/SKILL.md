@@ -67,8 +67,8 @@ Lequel ?
 Quelles actions doivent s'enchaîner après le trigger ?
 
 Liste-moi les étapes dans l'ordre :
-1. [Action 1] — Quoi ? Vers où ?
-2. [Action 2] — Quoi ? Vers où ?
+1. [Action 1] : Quoi ? Vers où ?
+2. [Action 2] : Quoi ? Vers où ?
 3. ...
 
 Pour chaque action, précise :
@@ -100,8 +100,8 @@ Y a-t-il des conditions ou des cas particuliers ?
 De quels accès as-tu besoin ?
 
 Services identifiés dans ton workflow :
-- [ ] [Service 1] — API key / OAuth ?
-- [ ] [Service 2] — API key / OAuth ?
+- [ ] [Service 1] : API key / OAuth ?
+- [ ] [Service 2] : API key / OAuth ?
 
 Tu as déjà configuré ces credentials dans n8n ?
 ```
@@ -209,7 +209,7 @@ Crée ou mets à jour la fiche dans le vault :
 Si c'est une nouvelle automatisation standalone, crée `Second Cerveau/3 RESSOURCES/Automatisations/Automatisation - [Nom].md` (créer le dossier `Automatisations/` s'il n'existe pas) :
 
 ```markdown
-# Automatisation — [Nom]
+# Automatisation : [Nom]
 
 **Créée le :** [DATE]
 **Statut :** 🟢 Active / 🟡 En test / 🔴 Inactive
@@ -273,4 +273,4 @@ Tu veux tester maintenant ?
 - Créer un workflow sans validation
 - Oublier la gestion d'erreur
 - Créer des workflows trop complexes (découper en plusieurs si besoin)
-- Supposer les credentials — demander si ils sont configurés
+- Supposer les credentials : toujours demander s'ils sont configurés

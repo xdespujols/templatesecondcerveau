@@ -28,8 +28,8 @@ Liste tous les fichiers dans `Second Cerveau/0 INBOX/` :
 ```
 J'ai trouvé [X] items dans ton inbox :
 
-1. [Fichier 1] — [Aperçu du contenu]
-2. [Fichier 2] — [Aperçu du contenu]
+1. [Fichier 1] : [Aperçu du contenu]
+2. [Fichier 2] : [Aperçu du contenu]
 ...
 
 On les traite un par un ?

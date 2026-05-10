@@ -23,7 +23,7 @@ Tu guides l'utilisateur dans sa réflexion quotidienne.
 ### Ouverture
 
 ```
-Daily Review — [Date]
+Daily Review : [Date]
 
 Quelques questions pour ta réflexion du jour :
 ```
@@ -65,7 +65,7 @@ Veux-tu que je crée une note avec ce résumé ?
 
 La daily note du jour vit dans `Second Cerveau/2 CASQUETTES/Sur ma vie/Life Phases/[Phase active]/YYYY-MM-DD.md`. Format obligatoire : `YYYY-MM-DD.md` (pas de suffixe).
 
-- **Si elle existe déjà** : append la section Daily Review à la fin du fichier, sans toucher au reste (logs `/done`, Focus, Notes…).
+- **Si elle existe déjà** : append la section Daily Review à la fin du fichier, sans toucher au reste (logs `/done`, Focus, Notes...).
 - **Si elle n'existe pas** : la créer à partir du template `Second Cerveau/4 TOOLS/Templates/Daily Note.md` puis ajouter la section Daily Review à la fin.
 
 Section Daily Review à ajouter (fusionnée avec la section « Fin de journée » du template si pertinent) :
@@ -73,7 +73,7 @@ Section Daily Review à ajouter (fusionnée avec la section « Fin de journée �
 ```markdown
 ---
 
-## Daily Review — [HH:MM]
+## Daily Review : [HH:MM]
 
 **Énergie :** [X]/10
 

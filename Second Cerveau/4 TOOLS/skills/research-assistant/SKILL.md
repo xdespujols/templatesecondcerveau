@@ -44,11 +44,11 @@ Cherche dans le vault les notes existantes liées au sujet :
 J'ai trouvé [X] notes potentiellement liées dans ton vault :
 
 **Très pertinentes :**
-- [[Note 1]] — [Résumé]
-- [[Note 2]] — [Résumé]
+- [[Note 1]] : [Résumé]
+- [[Note 2]] : [Résumé]
 
 **Peut-être utiles :**
-- [[Note 3]] — [Résumé]
+- [[Note 3]] : [Résumé]
 
 **Projets/Casquettes concernés :**
 - [[Projet/Casquette]]
@@ -78,10 +78,10 @@ Si l'utilisateur veut aller plus loin :
 ```
 Pour approfondir, je peux :
 
-1. **Explorer des angles spécifiques** — Creuser un aspect particulier
-2. **Poser des questions de clarification** — T'aider à affiner ta pensée
-3. **Structurer ce qu'on a** — Organiser les infos en note de recherche
-4. **Identifier des sources externes** — Suggérer où chercher plus d'infos
+1. **Explorer des angles spécifiques** : Creuser un aspect particulier
+2. **Poser des questions de clarification** : T'aider à affiner ta pensée
+3. **Structurer ce qu'on a** : Organiser les infos en note de recherche
+4. **Identifier des sources externes** : Suggérer où chercher plus d'infos
 
 Que préfères-tu ?
 ```

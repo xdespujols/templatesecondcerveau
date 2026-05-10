@@ -3,13 +3,13 @@ name: import
 description: Import intelligent note par note : routage IA + passage Bruce Lee (garder ou archiver)
 ---
 
-# Import Intelligent — Note par Note
+# Import Intelligent : Note par Note
 
-Tu vas analyser chaque note de `Second Cerveau/_Import/` pour la router vers le bon endroit du vault, avec un passage **Bruce Lee** : « Absorb what is useful, discard what is useless. » — qu'est-ce qui t'aide encore aujourd'hui, et qu'est-ce qui peut aller à l'archive ?
+Tu vas analyser chaque note de `Second Cerveau/_Import/` pour la router vers le bon endroit du vault, avec un passage **Bruce Lee** : « Absorb what is useful, discard what is useless. » Qu'est-ce qui t'aide encore aujourd'hui, et qu'est-ce qui peut aller à l'archive ?
 
 **Dossier source :** `Second Cerveau/_Import/` (l'utilisateur y dépose tout ce qu'il veut importer).
 
-## Étape 1 — État des lieux du vault
+## Étape 1 : État des lieux du vault
 
 Avant toute chose, lis le contexte utilisateur pour savoir où router les notes :
 
@@ -27,7 +27,7 @@ Avant toute chose, lis le contexte utilisateur pour savoir où router les notes 
 ```
 Contexte utilisateur :
 - Prénom : [Prénom]
-- Phase active : [Nom] — Focus : [résumé 1 ligne]
+- Phase active : [Nom]. Focus : [résumé 1 ligne]
 
 Projets actifs ([X]) :
 - [Projet 1] : [1 ligne de description + état]
@@ -42,7 +42,7 @@ Casquettes ([Y]) :
 
 Ce résumé te servira de table de routage pour l'analyse note par note.
 
-## Étape 2 — Scan de `Second Cerveau/_Import/`
+## Étape 2 : Scan de `Second Cerveau/_Import/`
 
 1. **Liste tous les fichiers** dans `Second Cerveau/_Import/` (récursif).
 2. **Compte-les** et affiche le total.
@@ -59,7 +59,7 @@ Je vais procéder en 3 phases :
 On y va ? (oui/non)
 ```
 
-## Étape 3 — Analyse en parallèle (sous-agents, 50 par batch)
+## Étape 3 : Analyse en parallèle (sous-agents, 50 par batch)
 
 Découpe la liste des notes en **batches de ~50**. Pour chaque batch, lance **un sous-agent** via l'outil `Agent` (en parallèle si plusieurs batches).
 
@@ -109,16 +109,16 @@ Retourne un tableau JSON strict, un objet par note.
 
 Agrège les JSON de tous les sous-agents en une seule liste. Garde cette liste en mémoire pour l'Étape 4.
 
-## Étape 4 — Présentation du plan de routing
+## Étape 4 : Présentation du plan de routing
 
 Présente à l'utilisateur un plan **détaillé et regroupé** par destination, avec le verdict Bruce Lee.
 
 Format :
 
 ```
-## Plan de routing — [X] notes analysées
+## Plan de routing : [X] notes analysées
 
-### Bruce Lee — vue d'ensemble
+### Bruce Lee : vue d'ensemble
 - **Keep** : [X] notes
 - **Archive** : [Y] notes
 
@@ -142,7 +142,7 @@ Format :
 |---|---|
 | ... | ... |
 
-### → Second Cerveau/0 INBOX/ ([N] notes) — décisions humaines
+### → Second Cerveau/0 INBOX/ ([N] notes) : décisions humaines
 > Ces notes n'ont pas pu être routées automatiquement.
 | Note | Pourquoi |
 |---|---|
@@ -160,14 +160,14 @@ b) Ajuster certains routages (dis-moi lesquels)
 c) Voir en détail le contenu d'une ou plusieurs notes avant de décider
 ```
 
-## Étape 5 — Ajustements (si l'utilisateur choisit b ou c)
+## Étape 5 : Ajustements (si l'utilisateur choisit b ou c)
 
 - **Option b** : l'utilisateur dit « déplace la note X vers Y ». Modifie la liste en mémoire.
 - **Option c** : affiche le contenu brut des notes demandées, puis repropose le plan ajusté.
 
 Boucle jusqu'à ce que l'utilisateur valide (option a).
 
-## Étape 6 — Exécution
+## Étape 6 : Exécution
 
 Une fois validé :
 
@@ -175,9 +175,9 @@ Une fois validé :
 2. **Déplace chaque note** vers sa destination, en renommant si `rename_suggestion` est donné.
 3. **Nettoie** les dossiers vides dans `Second Cerveau/_Import/`.
 
-Pas de log externe — `/done` loggera un résumé dans la daily note du jour.
+Pas de log externe. `/done` loggera un résumé dans la daily note du jour.
 
-## Étape 7 — Récap final
+## Étape 7 : Récap final
 
 ```
 Import terminé.
@@ -210,4 +210,4 @@ Prochaines étapes suggérées :
 
 **5. Parallélisation.** Si plus de 50 notes, lancer les sous-agents en parallèle (1 batch = 1 sous-agent, un seul message avec plusieurs appels Agent).
 
-**6. `Second Cerveau/0 INBOX/` est une exception.** Si un sous-agent y route > 10% des notes, c'est qu'il manque de contexte — affiner le résumé de l'Étape 1.
+**6. `Second Cerveau/0 INBOX/` est une exception.** Si un sous-agent y route > 10% des notes, c'est qu'il manque de contexte : affiner le résumé de l'Étape 1.
