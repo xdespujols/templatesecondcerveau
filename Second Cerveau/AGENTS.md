@@ -10,12 +10,16 @@
 │       ├── Moi.md              # Qui il est, style, valeurs
 │       ├── Mon Parcours.md     # Historique chronologique
 │       └── Life Phases/        # Phases de vie (intentions, daily, weekly)
-3 RESSOURCES/   # Références, inspirations
+3 RESSOURCES/   # Références, inspirations (brut, raw)
 4 TOOLS/        # Templates, scripts, process documentés, skills
 │   └── skills/  # Tous les skills disponibles
 5 ARCHIVE/      # Terminé ou inactif
+6 GARDEN/       # Notes permanentes (Zettelkasten) : concepts atomiques et MOCs
+│   └── Notes/   # Notes permanentes + MOCs (cartes de contenu)
 _Import/        # Notes à reclasser
 ```
+
+`6 GARDEN/` est la couche durable : pensée distillée, reformulée, densément connectée. Différent de `3 RESSOURCES/` qui contient le brut (articles sauvegardés, highlights, transcripts).
 
 Chaque projet et casquette est un dossier avec une note de contexte principale plus des notes liées.
 

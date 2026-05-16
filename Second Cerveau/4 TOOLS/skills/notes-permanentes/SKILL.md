@@ -9,10 +9,12 @@ Tu guides l'utilisateur dans une session de création de notes permanentes (Zett
 
 Une note permanente = un concept autonome, reformulé dans les mots de l'utilisateur, connecté au reste du vault.
 
+Toutes les notes permanentes vivent dans le **Garden** : `Second Cerveau/6 GARDEN/Notes/`. Les MOCs (cartes de contenu) aussi.
+
 ## Avant de commencer
 
 1. Lis le contexte de l'utilisateur (`Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md`)
-2. Si un dossier `Second Cerveau/3 RESSOURCES/Zettelkasten/` existe, scanne les notes et MOC pour connaître les thèmes documentés
+2. Si un dossier `Second Cerveau/6 GARDEN/Notes/` existe, scanne les notes et MOC pour connaître les thèmes documentés
 3. Si un dossier `Second Cerveau/3 RESSOURCES/Readwise/` existe, note les sources disponibles
 
 ## Étape 1 : Choisir la source
@@ -56,7 +58,7 @@ Pour chaque concept validé par l'utilisateur :
 
 ### 3.1 : Créer la note
 
-Emplacement : `Second Cerveau/3 RESSOURCES/Zettelkasten/`
+Emplacement : `Second Cerveau/6 GARDEN/Notes/`
 
 ```markdown
 ---
@@ -90,7 +92,7 @@ created: [date]
 
 ### 3.2 : Mettre à jour la MOC
 
-Si une MOC pertinente existe dans `Second Cerveau/3 RESSOURCES/Zettelkasten/MOC/`, ajouter la nouvelle note.
+Si une MOC pertinente existe dans `Second Cerveau/6 GARDEN/Notes/MOC/`, ajouter la nouvelle note.
 Si aucune MOC ne correspond, proposer d'en créer une.
 
 ### 3.3 : Proposer des connexions
@@ -122,4 +124,4 @@ c) C'est bon pour maintenant ?
 - **Toujours lier** à au moins une MOC et proposer des connexions
 - **Demander validation** avant de créer chaque note (montrer le contenu proposé)
 - **Style de l'utilisateur** : lire `Moi.md` et le référentiel style s'il existe
-- Les notes vont dans `Second Cerveau/3 RESSOURCES/Zettelkasten/`, les MOC dans `Second Cerveau/3 RESSOURCES/Zettelkasten/MOC/`
+- Les notes vont dans `Second Cerveau/6 GARDEN/Notes/`, les MOC dans `Second Cerveau/6 GARDEN/Notes/MOC/`
