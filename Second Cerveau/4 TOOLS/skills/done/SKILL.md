@@ -67,7 +67,7 @@ Ajoute à la fin de la note :
 - [ ] [TODO 2]
 ```
 
-### Étape 4 : Mise à jour des notes de contexte (NIVEAU 3, OBLIGATOIRE, sans validation)
+### Étape 4 : Mise à jour des notes de contexte (NIVEAU 3, OBLIGATOIRE, avec validation)
 
 Pour chaque extraction de type Décision, Fait, ou Contradiction qui concerne un projet ou une casquette :
 
@@ -77,7 +77,7 @@ Pour chaque extraction de type Décision, Fait, ou Contradiction qui concerne un
    - `Second Cerveau/1 PROJETS/[Projet]/[Projet].md` → Progression, roadmap, statut
    - `Second Cerveau/2 CASQUETTES/[Casquette]/[Casquette].md` → Nouvelles infos, responsabilités
 
-Si une **contradiction** est détectée : résous-la en faveur de ce qui a été dit pendant la session (l'info la plus récente gagne). Note dans la daily note quelle contradiction a été résolue.
+Si une **contradiction** est détectée : résous-la en faveur de ce qui a été dit pendant la session (l'info la plus récente gagne).
 
 ### Étape 5 : Cocher les todos complétés
 

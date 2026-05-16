@@ -1,11 +1,11 @@
 ---
 name: weekly-review
-description: Weekly review : bilan + priorisation par énergie
+description: Weekly review : bilan de la semaine écoulée, carry-forward des tâches non complétées, planification de la semaine suivante par jour.
 ---
 
 # Weekly Review
 
-Bilan de la semaine, carry-forward des tâches non complétées, organisation par énergie, priorisation.
+Bilan de la semaine, carry-forward des tâches non complétées, et planification de la semaine suivante répartie par jour. Pas d'organisation par type d'énergie : on reste sur une vue jour par jour, plus simple à tenir.
 
 ## Process
 
@@ -28,27 +28,21 @@ Lire la weekly note précédente (`$PREV_WEEK.md`) dans la phase active. Extrair
 ```bash
 find . -type f -name "*.md" -mtime -7 2>/dev/null | grep -v ".git" | head -50
 ```
-Scanner en particulier les dossiers `Second Cerveau/1 PROJETS/`, `Second Cerveau/2 CASQUETTES/`, `Second Cerveau/0 INBOX/`. Présenter un résumé rapide de ce qui a bougé.
+Scanner en particulier les dossiers `Second Cerveau/1 PROJETS/`, `Second Cerveau/2 CASQUETTES/`, `Second Cerveau/0 INBOX/`. Présenter un résumé rapide de ce qui a bougé cette semaine.
 
 ### Étape 5 : Brain dump
 Poser la question :
 > Comment s'est passée ta semaine ? Qu'est-ce qui a avancé, qu'est-ce qui a bloqué, qu'est-ce qui a émergé ?
 
-Attendre la réponse. Extraire les éléments clés.
+Attendre la réponse libre (l'utilisateur peut parler avec SuperWhisper). Extraire les éléments clés : avancées, blocages, émergences.
 
-### Étape 6 : Organiser par énergie
-Classer TOUTES les tâches (carry-forward + nouvelles) en 3 catégories :
-- **Deep Focus** : travail technique, écriture longue, apprentissage profond, réflexion stratégique
-- **Créatif** : contenu, design, idéation, vidéos, présentations, brainstorming
-- **Admin** : emails, compta, organisationnel, logistique, réunions, rangement
-
-Grouper par projet/casquette à l'intérieur de chaque catégorie. Présenter la classification et attendre validation.
-
-### Étape 7 : Priorités de la semaine suivante
+### Étape 6 : Plan de la semaine suivante par jour
 Demander :
-> Quelles sont tes 2-3 priorités pour la semaine prochaine ?
+> Quelles sont tes intentions transverses pour la semaine ? Et qu'est-ce que tu veux faire chaque jour (Lundi à Dimanche) ?
 
-### Étape 8 : Générer la weekly note
+Récupérer les intentions générales (transverse) et les actions concrètes par jour. Intégrer les tâches carry-forward dans les bonnes journées en consultant l'utilisateur si nécessaire.
+
+### Étape 7 : Générer la weekly note
 Créer `YYYY-WXX.md` dans la phase active avec ce format :
 
 ```markdown
@@ -59,33 +53,38 @@ phase: "[Phase name]"
 ---
 # YYYY-WXX (DD-DD mon)
 
-## Bilan
-- Avancé : ...
-- Bloqué : ...
-- Émergent : ...
+## Transverse / Intentions
+- [Intention 1]
+- [Intention 2]
 
-## Deep Focus
-### [[Projet ou Casquette]]
+## Lundi
 - [ ] Tâche
 
-## Créatif
-### [[Projet ou Casquette]]
+## Mardi
 - [ ] Tâche
 
-## Admin
-### [[Projet ou Casquette]]
+## Mercredi
 - [ ] Tâche
 
-## Questions ouvertes
+## Jeudi
+- [ ] Tâche
 
-## Prochaines échéances
+## Vendredi
+- [ ] Tâche
+
+## Samedi
+- [ ] Tâche
+
+## Dimanche
+- [ ] Tâche
 ```
 
-### Étape 9 : Confirmation
-Afficher un résumé : nombre de tâches carry-forward, nouvelles tâches, répartition Deep Focus / Créatif / Admin, top 2-3 priorités.
+### Étape 8 : Confirmation
+Afficher un résumé : nombre de tâches carry-forward, intentions transverses retenues, répartition par jour, tâches prioritaires.
 
 ## Output Style
 - En français
 - Concis, pas de blabla
-- Interactif (attend les réponses)
+- Interactif (attendre les réponses)
 - Pas d'emojis
+- Pas d'em-dash

@@ -5,25 +5,26 @@ phase: ""
 ---
 # {{date}}
 
-## Bilan
-- Avancé:
-- Bloqué:
-- Émergent:
+## Transverse / Intentions
+- 
 
-## Deep Focus
-###
-- [ ]
+## Lundi
+- [ ] 
 
-## Créatif
-###
-- [ ]
+## Mardi
+- [ ] 
 
-## Admin
-###
-- [ ]
+## Mercredi
+- [ ] 
 
-## Questions ouvertes
+## Jeudi
+- [ ] 
 
+## Vendredi
+- [ ] 
 
-## Prochaines échéances
+## Samedi
+- [ ] 
 
+## Dimanche
+- [ ] 
