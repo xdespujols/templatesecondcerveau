@@ -1,6 +1,6 @@
 ---
 name: initialisation
-description: Initialiser le vault Perspectives IA via conversation guidée. Pédagogie IPCRA, décharge projets/casquettes/contexte, dépôt de documents à tout moment (CV, bios, offres écrites), création complète de la structure et des fichiers de contexte personnalisés.
+description: Initialiser le vault Perspectives IA via conversation guidée. Pédagogie IPCRA, décharge projets/casquettes/contexte, dépôt de documents à tout moment (CV, bios, offres écrites), création complète de la structure et des fichiers de contexte personnalisés. Écrit chaque note au fur et à mesure (à la fin de son étape, pas tout à la fin) pour garder une fidélité maximale, puis clôture par une passe de relecture qui vérifie la cohérence et génère les artefacts transversaux (daily note d'init, configs Obsidian).
 ---
 
 # Initialisation du Vault Perspectives IA
@@ -20,6 +20,16 @@ Quand un fichier est déposé :
 2. **Extrais** les informations pertinentes pour la section en cours
 3. **Résume** à l'utilisateur ce que tu as compris et demande validation ou compléments
 4. **Continue** la section avec les gaps restants (si le document n'a pas tout couvert)
+
+## Principe transversal : écrire au fur et à mesure
+
+On écrit chaque note à la **fin de son étape**, pas tout à la fin. Ça garde une fidélité maximale : on écrit depuis la décharge fraîche et brute de chaque section, pas depuis un recap compressé 30-40 minutes plus tard (au risque d'oublier des choses).
+
+- Les artefacts self-contained (`Mon Parcours.md`, `Moi.md`, les notes de Casquette, les notes de Projet, la Phase de vie) sont écrits à la fin de leur étape, juste après la décharge + validation de cette étape. `Moi.md` est écrit en deux temps : le gros à la fin de l'Étape 4 (Qui tu es + Vision), complété à la fin de l'Étape 8 (style IA, valeurs, rythme).
+- Le patch des `AGENTS.md` (nom de l'IA + prénom) est appliqué dès l'Étape 2.
+- Les artefacts transversaux (daily note d'initialisation, configs Obsidian) sont générés à la fin, pendant la passe de relecture (Étape 12), parce qu'ils agrègent ou dépendent de plusieurs sections.
+
+Chaque étape de décharge se clôt sur une sous-étape « Écrire ». Annonce-le : « Maintenant j'écris [fichier] avec ce qu'on vient de capturer. Voilà ce que je mets dedans. » Écris, puis demande une validation rapide avant de passer à l'étape suivante. Le format exact de chaque fichier reste défini à l'Étape 12 (blocs de référence).
 
 ---
 
@@ -120,6 +130,17 @@ Une fois les deux noms recueillis :
 - Le **prénom** de l'utilisateur sera stocké dans `Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md` (Étape 12)
 - Le **nom de l'IA** sera stocké dans **l'`AGENTS.md` à la racine du WORKSPACE** (pas celui du vault) : c'est l'identité globale de l'IA, valable pour tous les projets WORKSPACE, pas seulement le vault
 
+### Écrire : patcher les AGENTS.md
+
+Dès maintenant, patche le nom de l'IA et le prénom dans les deux `AGENTS.md` (détail complet du sed à l'Étape 12.1) :
+
+```bash
+sed -i '' "s/\[Nom IA\]/[Nom choisi]/g; s/\[Prénom\]/[Prénom]/g" AGENTS.md
+sed -i '' "s/\[Nom IA\]/[Nom choisi]/g; s/\[Prénom\]/[Prénom]/g" "Second Cerveau/AGENTS.md"
+```
+
+Dis à l'utilisateur : « J'ai enregistré ton prénom et le nom de l'IA (« [Nom IA] ») dans AGENTS.md. À partir de maintenant je me réfère à moi sous ce nom. » Puis passe à l'Étape 3.
+
 ---
 
 ## Étape 3 : Section 01 : Qui tu es
@@ -141,6 +162,14 @@ Pose ces questions **une par une**, attends la réponse entre chaque :
 3. **Passions, intérêts actuels, grandes convictions.** Les sujets sur lesquels tu peux passer des heures. Sois précis : pas « la tech » mais « les systèmes de pensée augmentée, les PKM, l'IA appliquée au knowledge management ».
 
 Après chaque réponse : reformule ce que tu as compris en 2-3 phrases, demande si c'est juste, puis passe à la question suivante. Rappelle discrètement à l'utilisateur qu'il peut déposer un document ou répondre à voix haute (SuperWhisper).
+
+### Écrire : `Mon Parcours.md`
+
+Maintenant écris `Second Cerveau/2 CASQUETTES/Sur ma vie/Mon Parcours.md` avec l'historique chronologique capturé + ce que tu as extrait des documents déposés (structure par année / grande période). Format défini à l'Étape 12.3.
+
+Le reste de cette section (parcours en bref, forces, faiblesses, passions, MBTI) alimente `Moi.md`, qui est écrit à la fin de l'Étape 4 : garde-le en mémoire pour l'instant.
+
+Dis à l'utilisateur : « J'ai écrit Mon Parcours.md avec ton historique. Quick check : ça matche ? Quelque chose à corriger ? » Applique les corrections, puis passe à l'Étape 4.
 
 ---
 
@@ -165,6 +194,16 @@ Pose **une par une** :
 3. **À 5 ans ?** Même exercice. Qu'est-ce que tu vois ?
 
 4. **3 à 5 actions quotidiennes essentielles pour être heureux.** Pas des valeurs abstraites : des actions concrètes qui, si tu les fais, font que ta journée est bonne.
+
+### Écrire : `Moi.md` (première passe)
+
+Maintenant crée `Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md` (format complet à l'Étape 12.2) et remplis les sections déjà capturées :
+- Depuis l'Étape 3 : **Prénom**, **Qui je suis** (2-3 phrases), **Forces**, **Faiblesses**, **Passions**, **MBTI**.
+- Depuis l'Étape 4 : **Vision long-terme** (12 mois + 5 ans) et **Actions essentielles quotidiennes**.
+
+Laisse en attente les sections **Style de communication IA**, **Valeurs et principes** et **Comment je travaille** : elles seront complétées à la fin de l'Étape 8 (mets un court `_(à compléter Étape 8)_` en placeholder). Conserve la frontmatter (`type: context, status: active`). Ne mets jamais le nom de l'IA dans `Moi.md` (il va dans `AGENTS.md`).
+
+Dis à l'utilisateur : « J'ai écrit Moi.md avec qui tu es et ta vision. Quick check : ça matche ? » Applique les corrections, puis passe à l'Étape 5.
 
 ---
 
@@ -207,7 +246,17 @@ Rappelle l'affordance document : « Tu peux aussi me déposer ici des docs liés
 
 **Suis l'énergie de la réponse** : si une question tombe à plat, passe à autre chose. Si une réponse ouvre une piste riche, creuse-la. Reformule brièvement à la fin pour validation, puis passe à la casquette suivante.
 
-Sauvegarde tout en mémoire pour l'Étape 10.
+### Écrire : créer les notes de Casquette
+
+À la fin de l'Étape 5, une fois toutes les casquettes déchargées et validées, crée tous les fichiers de casquette (format + cas spécial « casquette Business » à l'Étape 12.4) :
+
+Pour chaque casquette :
+```bash
+mkdir -p "Second Cerveau/2 CASQUETTES/[Nom]"
+```
+Écris `Second Cerveau/2 CASQUETTES/[Nom]/[Nom].md` depuis le template `Second Cerveau/4 TOOLS/Templates/Casquette.md`, rempli avec les champs capturés. Si une activité indépendante a été mentionnée, crée la casquette Business dédiée (Étape 12.4).
+
+Dis à l'utilisateur : « J'ai créé [X] notes de casquette dans 2 CASQUETTES/. Quick check : ça matche ? » Applique les corrections, puis passe à l'Étape 6.
 
 ---
 
@@ -246,6 +295,18 @@ Rappelle l'affordance document : « Tu as des docs à rapatrier pour ce projet ?
 
 **Creuse ce qui est riche, skip ce qui est déjà clair.** Reformule à la fin pour validation, puis passe au projet suivant.
 
+### Écrire : créer les notes de Projet
+
+À la fin de l'Étape 6, une fois tous les projets déchargés et validés, crée tous les fichiers de projet (format à l'Étape 12.5) :
+
+Pour chaque projet :
+```bash
+mkdir -p "Second Cerveau/1 PROJETS/[Nom]"
+```
+Écris `Second Cerveau/1 PROJETS/[Nom]/[Nom].md` depuis le template `Second Cerveau/4 TOOLS/Templates/Projet.md`, rempli avec les champs capturés.
+
+Dis à l'utilisateur : « J'ai créé [Y] notes de projet dans 1 PROJETS/. Quick check : ça matche ? » Applique les corrections, puis passe à l'Étape 7.
+
 ---
 
 ## Étape 7 : Section 05 : Phase de vie
@@ -276,6 +337,17 @@ Pose **une par une** :
 
 4. **Que fais-tu quand tu es surchargé / dispersé / fatigué / dans le flow ?** (stratégies personnelles, précieux pour que l'IA t'aide en contexte).
 
+### Écrire : créer la Phase de vie
+
+À la fin de l'Étape 7 (détail complet à l'Étape 12.6) :
+1. Renomme `Second Cerveau/2 CASQUETTES/Sur ma vie/Life Phases/1 Phase initiale/` en `1 [Nom de la phase]/`.
+2. Remplis `1 Intention.md` (template `Second Cerveau/4 TOOLS/Templates/Phase de vie.md`) : période, intention principale, journée idéale, objectifs, stratégies quand surchargé / dispersé / fatigué / dans le flow.
+3. Mets à jour `Second Cerveau/2 CASQUETTES/Sur ma vie/Life Phases/Life Phases.md` (remplace « Phase initiale » par le vrai nom + lien vers l'intention).
+
+Les configs Obsidian (qui pointent vers le dossier de la phase) sont mises à jour à l'Étape 12.7, une fois le nom de la phase figé.
+
+Dis à l'utilisateur : « J'ai créé la phase « [Nom] » et son intention. Quick check : ça matche ? » Applique les corrections, puis passe à l'Étape 8.
+
 ---
 
 ## Étape 8 : Section Bonus : Contexte global (style IA, valeurs)
@@ -294,6 +366,17 @@ Pose :
 2. **Style de communication IA** : tutoiement ? ton (direct/chaleureux/challengeant) ? langue ? niveau de pushback (tu veux que l'IA te challenge, ou qu'elle exécute) ?
 
 3. **Chrono-type** : tes heures de deep work, ton rythme hebdo.
+
+### Écrire : compléter `Moi.md`
+
+Maintenant complète `Moi.md` (créé en première passe à l'Étape 4) avec les sections restées en attente :
+- **Style de communication IA** (tutoiement, ton, langue, niveau de pushback)
+- **Valeurs et principes**
+- **Comment je travaille** (routines + chrono-type)
+
+Remplace les placeholders `_(à compléter Étape 8)_`. À partir de maintenant, respecte le style de communication qui vient d'être capturé.
+
+Dis à l'utilisateur : « J'ai complété Moi.md avec ton style IA, tes valeurs et ton rythme. Quick check : ça matche ? » Applique les corrections, puis passe à l'Étape 9.
 
 ---
 
@@ -323,10 +406,10 @@ Continue jusqu'à avoir une compréhension complète.
 
 ## Étape 11 : Validation finale
 
-Montre un récapitulatif et demande validation explicite :
+À ce stade, les notes self-contained sont déjà écrites au fur et à mesure (Étapes 2 à 8). Montre un récapitulatif de l'état du vault et demande une validation explicite avant la passe de relecture (Étape 12) :
 
 ```
-Voici ce que je vais créer / compléter :
+Voici l'état du vault (déjà écrit au fil des étapes) + ce qu'il reste à générer :
 
 - AGENTS.md (racine WORKSPACE)              <- ajout du nom de l'IA « [Nom IA] » + prénom
 - Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md          <- qui tu es, style IA, valeurs, vision
@@ -354,9 +437,14 @@ Confirmes-tu ? (oui / ajustements)
 
 ---
 
-## Étape 12 : Génération
+## Étape 12 : Passe de relecture & génération des artefacts transversaux
 
-Si validé, crée les fichiers suivants (respecte strictement la structure de la nouvelle arbo).
+À ce stade, les artefacts self-contained ont déjà été écrits au fur et à mesure : le patch des `AGENTS.md` (Étape 2), `Mon Parcours.md` (Étape 3), `Moi.md` (Étapes 4 + 8), les casquettes (Étape 5), les projets (Étape 6), la phase de vie (Étape 7). Cette étape est le **relecteur** :
+
+1. **Relis** tout ce qui a été écrit (Moi.md, Mon Parcours.md, chaque casquette, chaque projet, l'intention de phase) et vérifie la cohérence transversale : chaque projet est-il rattaché à une casquette ? une casquette « Business » a-t-elle bien été créée si une activité indépendante existe ? la phase de vie s'aligne-t-elle avec la vision ? Signale et corrige les mismatches directement.
+2. **Génère les artefacts transversaux** qui dépendent de plusieurs sections : la daily note d'initialisation (12.8) et les configs Obsidian (12.7, qui ont besoin du nom de phase figé).
+
+Les blocs 12.1 à 12.8 ci-dessous restent la **référence du format** de chaque fichier (invoquée par les sous-étapes « Écrire » des Étapes 2 à 8). Ne réécris pas un fichier déjà écrit et validé, sauf pour appliquer une correction de cohérence.
 
 ### 12.1 : Nom de l'IA et prénom dans les fichiers AGENTS.md
 
@@ -548,15 +636,19 @@ Redémarre Obsidian pour activer les configs de daily/weekly notes.
 
 ## Règles
 
+- **Écrire au fur et à mesure** : chaque artefact self-contained est écrit à la fin de son étape, depuis la décharge fraîche (voir « Principe transversal »). Ne tiens pas toute la décharge en mémoire jusqu'à la fin.
+- **Demander une validation rapide** après avoir écrit chaque artefact et avant de passer à l'étape suivante (en plus de la validation finale de l'Étape 11).
 - **Toujours demander validation** avant de créer des fichiers (Étape 11)
 - **Reformuler** après chaque réponse pour valider la compréhension
 - **Rappeler l'affordance fichier** à chaque grande section (Étapes 3-7)
 - **Lire intégralement** tout fichier déposé avant d'en extraire l'info
 - **Ne jamais inventer** : si une info manque et n'a pas été donnée, demande
 - **Respecter le style** capturé à l'Étape 8 dès qu'il est connu (tutoiement, ton, pushback)
+- **Le relecteur (Étape 12) est un check de cohérence**, pas une passe de réécriture : il relit ce qui a été écrit, corrige les mismatches, puis génère les artefacts transversaux (daily note d'init, configs Obsidian).
 
 ## Ce que tu ne fais PAS
 
+- Tenir toute la décharge en mémoire et tout écrire à la fin : écris chaque artefact à la fin de son étape
 - Sauter le prélude pédagogique (Étape 1) : l'utilisateur doit comprendre ce qu'il fait
 - Créer les fichiers sans validation finale
 - Mettre le nom de l'IA dans `Moi.md` (il va dans `AGENTS.md`)
