@@ -1,11 +1,11 @@
 ---
 name: weekly-review
-description: Weekly review : bilan de la semaine écoulée, carry-forward des tâches non complétées, planification de la semaine suivante par jour.
+description: Weekly review : bilan de la semaine écoulée, carry-forward des tâches non complétées, intentions transverses, et répartition de la semaine suivante jour par jour.
 ---
 
 # Weekly Review
 
-Bilan de la semaine, carry-forward des tâches non complétées, et planification de la semaine suivante répartie par jour. Pas d'organisation par type d'énergie : on reste sur une vue jour par jour, plus simple à tenir.
+Bilan de la semaine, carry-forward des tâches non complétées, intentions transverses, et planification de la semaine suivante répartie par jour. Pas d'organisation par type d'énergie : on reste sur une vue jour par jour, plus simple à tenir.
 
 ## Process
 
@@ -28,21 +28,31 @@ Lire la weekly note précédente (`$PREV_WEEK.md`) dans la phase active. Extrair
 ```bash
 find . -type f -name "*.md" -mtime -7 2>/dev/null | grep -v ".git" | head -50
 ```
-Scanner en particulier les dossiers `Second Cerveau/1 PROJETS/`, `Second Cerveau/2 CASQUETTES/`, `Second Cerveau/0 INBOX/`. Présenter un résumé rapide de ce qui a bougé cette semaine.
+Scanner en particulier les dossiers `Second Cerveau/1 PROJETS/`, `Second Cerveau/2 CASQUETTES/`, `Second Cerveau/0 INBOX/`. Présenter un résumé rapide de ce qui a bougé cette semaine. Repérer au passage les tâches ouvertes ou évoquées dans les fichiers modifiés.
 
 ### Étape 5 : Brain dump
 Poser la question :
 > Comment s'est passée ta semaine ? Qu'est-ce qui a avancé, qu'est-ce qui a bloqué, qu'est-ce qui a émergé ?
 
-Attendre la réponse libre (l'utilisateur peut parler avec SuperWhisper). Extraire les éléments clés : avancées, blocages, émergences.
+Attendre la réponse libre (l'utilisateur peut parler avec SuperWhisper). Extraire les éléments clés : avancées, blocages, émergences, et les nouvelles tâches qui en découlent.
 
-### Étape 6 : Plan de la semaine suivante par jour
+### Étape 6 : Intentions transverses
 Demander :
-> Quelles sont tes intentions transverses pour la semaine ? Et qu'est-ce que tu veux faire chaque jour (Lundi à Dimanche) ?
+> Quelles sont tes 2-3 intentions transverses pour la semaine ? (les fils rouges qui traversent la semaine, pas liés à un jour précis)
 
-Récupérer les intentions générales (transverse) et les actions concrètes par jour. Intégrer les tâches carry-forward dans les bonnes journées en consultant l'utilisateur si nécessaire.
+Ces intentions vont en haut de la note, dans la section "Transverse / Intentions".
 
-### Étape 7 : Générer la weekly note
+### Étape 7 : Répartir les tâches par jour
+Répartir TOUTES les tâches sur les jours de la semaine (Lundi à Dimanche) : les tâches carry-forward (étape 3), les nouvelles issues du brain dump (étape 5), et les tâches repérées dans les fichiers modifiés (étape 4).
+
+Pour chaque jour :
+- Lister les tâches en `- [ ]`.
+- Grouper par projet avec un sous-titre `### [[Projet]]` quand plusieurs tâches d'un même projet se suivent, sinon lister directement.
+- Une tâche peut apparaître sur plusieurs jours si elle s'étale (par exemple "Avancer sur [[Projet X]]" du mardi au jeudi).
+
+Présenter la répartition proposée et attendre la validation ou les corrections de l'utilisateur avant de générer la note.
+
+### Étape 8 : Générer la weekly note
 Créer `YYYY-WXX.md` dans la phase active avec ce format :
 
 ```markdown
@@ -58,6 +68,7 @@ phase: "[Phase name]"
 - [Intention 2]
 
 ## Lundi
+### [[Projet]]
 - [ ] Tâche
 
 ## Mardi
@@ -79,8 +90,10 @@ phase: "[Phase name]"
 - [ ] Tâche
 ```
 
-### Étape 8 : Confirmation
-Afficher un résumé : nombre de tâches carry-forward, intentions transverses retenues, répartition par jour, tâches prioritaires.
+Les intentions transverses viennent de l'étape 6. La répartition par jour vient de l'étape 7 validée. Le brain dump (étape 5) sert à extraire tâches et intentions, il n'est pas recopié tel quel dans la note.
+
+### Étape 9 : Confirmation
+Afficher un résumé : nombre de tâches carry-forward, intentions transverses retenues, nombre de tâches par jour, et les tâches prioritaires de la semaine.
 
 ## Output Style
 - En français
