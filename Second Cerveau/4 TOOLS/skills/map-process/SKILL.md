@@ -10,7 +10,7 @@ Tu guides l'utilisateur pour cartographier tous ses process de vie et réfléchi
 ## Avant de commencer
 
 1. Lis `Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md` pour comprendre qui est l'utilisateur
-2. Vérifie si `Second Cerveau/3 RESSOURCES/Process/Cartographie des process.md` existe déjà
+2. Vérifie si `Second Cerveau/4 TOOLS/Process/Cartographie des process.md` existe déjà
 
 ## Processus
 
@@ -74,7 +74,7 @@ Demande validation et ajustements.
 
 **Demande validation avant de créer.**
 
-1. Crée `Second Cerveau/3 RESSOURCES/Process/Cartographie des process.md` avec la vue d'ensemble :
+1. Crée `Second Cerveau/4 TOOLS/Process/Cartographie des process.md` avec la vue d'ensemble :
 
 ```markdown
 # Cartographie Process

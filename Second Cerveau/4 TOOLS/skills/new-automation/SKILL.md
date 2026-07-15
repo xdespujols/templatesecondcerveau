@@ -14,7 +14,7 @@ Tu aides l'utilisateur à concevoir et créer une automatisation sur n8n.
 ## Avant de commencer
 
 1. Lis `Second Cerveau/2 CASQUETTES/Sur ma vie/Moi.md` et la phase active pour le contexte utilisateur
-2. Si un process est mentionné, lis sa fiche dans `Second Cerveau/3 RESSOURCES/Process/`
+2. Si un process est mentionné, lis sa fiche dans `Second Cerveau/4 TOOLS/Process/`
 
 ## Processus
 

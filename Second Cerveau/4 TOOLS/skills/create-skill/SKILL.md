@@ -95,7 +95,7 @@ Si Firecrawl indisponible : demande à l'utilisateur s'il veut coller un résum�
 On a collecté ta méthode. Qu'est-ce qu'on produit ?
 
 - **Skill seul** : fichier `Second Cerveau/4 TOOLS/skills/[nom]/SKILL.md`. L'IA peut l'exécuter avec /[nom]
-- **Fiche seule** : `Second Cerveau/3 RESSOURCES/Process/Process - [Nom].md`. Référence humaine lisible, pas d'exécution IA
+- **Fiche seule** : `Second Cerveau/4 TOOLS/Process/Process - [Nom].md`. Référence humaine lisible, pas d'exécution IA
 
 Lequel ?
 ```
@@ -157,7 +157,7 @@ description: [1-1024 chars. Spécifique, pour que l'agent sache QUAND déclenche
    > Pourquoi c'est raté : [...]
 
 ## Références
-- [[Process - Nom]] : fiche process associée dans `Second Cerveau/3 RESSOURCES/Process/`
+- [[Process - Nom]] : fiche process associée dans `Second Cerveau/4 TOOLS/Process/`
 - [Méthode publique X] : [URL]. Points clés : [...]
 
 ## Règles
@@ -171,7 +171,7 @@ description: [1-1024 chars. Spécifique, pour que l'agent sache QUAND déclenche
 
 #### Si fiche
 
-Crée `Second Cerveau/3 RESSOURCES/Process/Process - [Nom].md` :
+Crée `Second Cerveau/4 TOOLS/Process/Process - [Nom].md` :
 
 ```markdown
 # Process : [Nom]
@@ -233,7 +233,7 @@ Génère les deux. Ajoute les wikilinks croisés :
 
 ### Étape 8 : Mise à jour de la cartographie
 
-Si `Second Cerveau/3 RESSOURCES/Process/Cartographie des process.md` existe, ajoute le nouveau process dans la bonne section (Daily / Weekly / Monthly / Trigger / Manuel).
+Si `Second Cerveau/4 TOOLS/Process/Cartographie des process.md` existe, ajoute le nouveau process dans la bonne section (Daily / Weekly / Monthly / Trigger / Manuel).
 
 Si la cartographie n'existe pas, propose à l'utilisateur de la créer via `/map-process`.
 
